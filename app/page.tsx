@@ -202,15 +202,19 @@ export default function Home() {
           {/* Client Sites Grid */}
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { name: "Portable Detail", industry: "Mobile Detailing", url: "https://portabledetail.com/" },
-              { name: "Miller Landscape Utah", industry: "Landscaping", url: "https://www.millerlandscapeutah.com/" },
-              { name: "SU Services", industry: "Professional Services", url: "https://suservices25.com/home.html" },
-              { name: "The Corn Dog Co", industry: "Food & Beverage", url: "https://thecorndogco.com/" },
+              { name: "Portable Detail", industry: "Mobile Detailing", url: "https://portabledetail.com/", image: "/portfolio/portable-detail.png" },
+              { name: "Miller Landscape Utah", industry: "Landscaping", url: "https://www.millerlandscapeutah.com/", image: "/portfolio/miller-landscape.png" },
+              { name: "SU Services", industry: "Professional Services", url: "https://suservices25.com/home.html", image: "/portfolio/su-services.png" },
+              { name: "The Corn Dog Co", industry: "Food & Beverage", url: "https://thecorndogco.com/", image: "/portfolio/corndogco.png" },
             ].map((project) => (
               <Card key={project.name} className="bg-[#1a1a1a] border-white/10 hover:border-[#ebad2e]/30 transition-colors">
                 <CardHeader>
-                  <div className="bg-[#0a0a0a] h-48 rounded-lg mb-4 flex items-center justify-center text-gray-500 border border-white/5">
-                    [Screenshot]
+                  <div className="relative h-48 rounded-lg mb-4 overflow-hidden border border-white/5">
+                    <img 
+                      src={project.image} 
+                      alt={project.name} 
+                      className="w-full h-full object-cover object-top"
+                    />
                   </div>
                   <CardTitle className="text-xl text-white">{project.name}</CardTitle>
                   <CardDescription className="text-gray-400">{project.industry}</CardDescription>
@@ -270,6 +274,66 @@ export default function Home() {
                 Most projects go from kickoff to live in 2-4 weeks. We move fast because we know what we're doing.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">What Our Clients Say</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="bg-[#1a1a1a] border-white/10">
+              <CardContent className="pt-6">
+                <div className="text-[#ebad2e] text-4xl mb-4">"</div>
+                <p className="text-gray-300 text-lg mb-6">
+                  They took our vision and turned it into something way better than we imagined. The site pays for itself every month with the leads it brings in. Fast turnaround, no back-and-forth headaches.
+                </p>
+                <div>
+                  <p className="font-semibold text-white">Curtis H.</p>
+                  <p className="text-gray-400 text-sm">Owner, Portable Detail</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-[#1a1a1a] border-white/10">
+              <CardContent className="pt-6">
+                <div className="text-[#ebad2e] text-4xl mb-4">"</div>
+                <p className="text-gray-300 text-lg mb-6">
+                  We went from a site that looked like it was built in 2010 to something our competitors are jealous of. The whole process was smooth and they actually listened to what we needed.
+                </p>
+                <div>
+                  <p className="font-semibold text-white">Janson P.</p>
+                  <p className="text-gray-400 text-sm">Owner, Miller Landscape Utah</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-[#1a1a1a] border-white/10">
+              <CardContent className="pt-6">
+                <div className="text-[#ebad2e] text-4xl mb-4">"</div>
+                <p className="text-gray-300 text-lg mb-6">
+                  Professional, fast, and they actually understand what small businesses need. Not just a pretty website but something that actually works and brings in customers. Highly recommend.
+                </p>
+                <div>
+                  <p className="font-semibold text-white">Landon S.</p>
+                  <p className="text-gray-400 text-sm">Owner, SU Services</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-[#1a1a1a] border-white/10">
+              <CardContent className="pt-6">
+                <div className="text-[#ebad2e] text-4xl mb-4">"</div>
+                <p className="text-gray-300 text-lg mb-6">
+                  Best decision we made for our brand. The site captures exactly who we are and customers tell us all the time how great it looks. Worth every penny.
+                </p>
+                <div>
+                  <p className="font-semibold text-white">Brandon M.</p>
+                  <p className="text-gray-400 text-sm">Founder, The Corn Dog Co</p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
